@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { HiOutlineBookmark } from "react-icons/hi";
 
 const Blog = ({ blog, handleAddBookmarks, handleReadingTime }) => {
-    const { title, cover, author, author_img, reading_time, posted_date, hashtags } = blog;
+    const { id, title, cover, author, author_img, reading_time, posted_date, hashtags } = blog;
     return (
         <div className="space-y-6 mb-20 border-b pb-4">
             <img className="w-full rounded-xl" src={cover} alt={`Cover Pic For The ${title}`} />
@@ -28,7 +28,7 @@ const Blog = ({ blog, handleAddBookmarks, handleReadingTime }) => {
                 }
             </p>
             <p>
-                <button onClick={() => handleReadingTime(reading_time)} className="text-[#6047EC] underline font-semibold text-xl">
+                <button onClick={() => handleReadingTime(id, reading_time)} className="text-[#6047EC] underline font-semibold text-xl">
                     Mark As Read</button>
             </p>
         </div>
